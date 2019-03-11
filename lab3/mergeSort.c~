@@ -1,0 +1,62 @@
+#include "mySort.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+
+void 
+mySort(int array[], unsigned int first, unsigned int last)
+{
+	/*This function implements the merge sort algorithm using the insertion sort algorithm.*/
+	
+        /* Variable list*/
+	int sizeOfArray;	
+
+	/*Find the size of the array of numbers*/
+	sizeOfArray = (last - first) + 1;
+	
+	/*First check if even or odd.*/
+	if(sizeOfArray % 2 == 0)
+	{
+		/*It is even*/
+		insertionSort(array,first,last);						
+				
+	}
+        else
+        {
+		/*It is odd*/
+        
+	
+	}
+		
+	
+
+
+}
+
+void 
+insertionSort(int num[], unsigned int begin, unsigned int end)
+{
+	/*This function sorts into descending order form first to last*/
+	
+	/*Local Variable List*/
+	int counter;
+	int counter2;
+	
+	
+	for(counter = begin; counter < end; counter++)
+	{
+                myCopy(&counter, &counter2);
+		
+		while(counter2 >= 0 && (num[counter2 + 1] < num[counter2]))
+		{	
+			/*Swap*/
+			
+			mySwap(&num[counter2],&num[counter2 + 1]);
+
+			/*Decrement*/
+			counter2--;
+		}
+	}
+
+}
+
