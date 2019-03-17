@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 /**
  *  The functions in this module implement a Stack data structure
  *  of integers.  (Note that chars are also integers so this
@@ -39,7 +41,21 @@ static int stack[100];
 
 int pop()
 {
-  return 0;  //A dummy return statement
+  /*Local Variables*/
+  int returnValue;  
+  /*Check if the pop() function is attempted on an empty stack*/
+  if(stack[top] == NULL)
+  {
+	/*Error message*/
+	fprintf(stderr, "You are attempting to pop an empty stack");
+	returnValue = -1;
+  }
+  else
+  {
+	returnValue = stack[top];
+  }
+    
+  return returnValue;  
 }
 
 /**
@@ -50,6 +66,11 @@ int pop()
  */
 void push(int thing2push)
 {
+	/*Add things2push to the top of the stack*/
+	stack[top] = thing2push;
+	
+	/*Increment the value of the stack*/
+	top++;
 }
 
 /**
@@ -59,5 +80,18 @@ void push(int thing2push)
  */
 int isEmpty()
 {
-  return 0;  //A dummy return statement
+	/*Local Variable*/
+	int returnValue;
+	
+	/*Check if the stack is empty*/
+	if(stack[0] == NULL)
+	{
+		returnValue = 1;
+	}
+	else
+	{
+		returnValue = 0;
+	}
+	
+	return returnValue;
 }
