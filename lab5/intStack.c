@@ -44,7 +44,7 @@ int pop()
   /*Local Variables*/
   int returnValue;  
   /*Check if the pop() function is attempted on an empty stack*/
-  if(stack[top] == NULL)
+  if(stack[0] == NULL)
   {
 	/*Error message*/
 	fprintf(stderr, "You are attempting to pop an empty stack");
@@ -52,8 +52,11 @@ int pop()
   }
   else
   {
-	returnValue = stack[top];
+	returnValue = stack[top - 1];
   }
+  
+  /*Reduce the top value*/
+  top--;
     
   return returnValue;  
 }
