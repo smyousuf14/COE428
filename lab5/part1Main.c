@@ -67,11 +67,11 @@ int main(int argc, char * argv[])
 	
 	if(valid)
 	{
-		printf("Valid.");
+		printf("Valid");
 	}
 	else
 	{
-		printf("Not Valid.");
+		printf("Not Valid");
 	}
     
     

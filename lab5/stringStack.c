@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 /**
  *  The functions in this module implement a Stack data structure
  *  of char pointers (aka "strings").
@@ -25,8 +27,8 @@
 //
 //  RECOMMENDATION:
 //   Uncomment the following 2 lines and use these static globals!
-//static int top = 0;
-//static char * stack[100];
+static int top = 0;
+static char * stack[100];
 
 /**
  * pop() removes the top string on the stack and returns it.
@@ -37,7 +39,21 @@
 
 char *  pop()
 {
-  return (char *) 0;  //A dummy return statement
+	/*Local Variable list*/
+	char * returnValue;
+	if(stack[0] == NULL)
+	{
+		/*Error message*/
+		fprintf(stderr, "You are attempting to pop an empty stack");
+		returnValue = -1;
+	}
+	else
+	{
+		returnValue = stack[top - 1];
+	}
+	
+	top--;
+  return returnValue;  
 }
 
 /**
@@ -48,6 +64,8 @@ char *  pop()
  */
 void push(char * thing2push)
 {
+	stack[top] = thing2push;
+	top++;
 }
 
 /**
@@ -57,5 +75,18 @@ void push(char * thing2push)
  */
 int isEmpty()
 {
-  return 0;  //A dummy return statement
+    /*Local Variable list*/
+	int returnValue;
+	
+	/*Check if stack is empty or not*/
+	if(stack[0] == NULL)
+	{
+		returnValue = 0;
+	}
+	else
+	{
+		returnValue = 1;
+	}
+   
+  return returnValue;  
 }

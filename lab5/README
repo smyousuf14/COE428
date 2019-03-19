@@ -1,13 +1,13 @@
 Summarize your lab:
 
   Part 1:
-     Works  Yes or No
+     Works  Yes 
      
   Part 2:
-     Works  Yes or No
+     Works  Yes 
      
   Part 3:
-     Works  Yes or No
+     Works  Yes 
      
 ***ANSWERS TO QUESTIONS***
  Question 1:
@@ -15,6 +15,7 @@ Summarize your lab:
      (eg. chaining or open addressing)? Explain your choice
      briefly (less than 25 words).
  YOUR ANSWER:
+ I choose to do chaining because it is simple to invest and the hash table never fills up. We can always add more elements.
  
  
  
@@ -24,6 +25,8 @@ Summarize your lab:
        Which hash function (division or multiplication) did you use?
        How did you convert a string into a number?
  YOUR ANSWER:
+ I used division. The Hash function that will be used in this Hash table is X mod 7, where X is the sum of the ASCII values of each character in the tag.
+ I converted the string into a number by taking the sum of the ASCII equivalents of each character
 
  
  
@@ -40,4 +43,7 @@ Summarize your lab:
        you would modify Part 3 to allow this kind of tag.
        
  YOUR ANSWER:
+ 
+ I would modify part 3 by modifying the logic surrounding tags. I would search for '>' char and if the character before it was '/'. I would not put it in a stack 
+ since it does not have an end tag.
   
