@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include <string.h>
 
 extern char *  pop();
 extern void push(char *);
@@ -47,7 +48,7 @@ int main(int argc, char * argv[])
 			/*Set the tag number value*/
 			tagNumber++;
 			
-			incrementNumber = strlen(tempCh);
+			incrementNumber = strlen(tempCh) + 2;
 			
 		}
 		else
@@ -57,7 +58,7 @@ int main(int argc, char * argv[])
 			/*Need to create a temp array*/
 			while(ch[counter + counter2] != '>')
 			{
-				tempCh[counter2 - 1] = ch[counter + counter2];
+				tempCh[counter2 - 2] = ch[counter + counter2];
 				
 				counter2++;
 			}
@@ -72,7 +73,7 @@ int main(int argc, char * argv[])
 			}
 			tagNumber--;
 			
-			incrementNumber = strlen(tempCh);
+			incrementNumber = strlen(tempCh) + 3;
 			
 		}
 		
