@@ -1,7 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-
 /**
  *  The functions in this module implement a Stack data structure
  *  of integers.  (Note that chars are also integers so this

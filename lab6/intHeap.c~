@@ -27,7 +27,6 @@ void addHeap(int thing2add)
 {
 	/*Add things2add to the heap*/
 	heap[top] = things2add;
-	top++;
 }
 
 /**
