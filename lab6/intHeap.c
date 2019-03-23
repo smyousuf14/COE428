@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+
 /**
  *  The functions in this module implement a Heapdata structure
  *  of integers.
@@ -16,7 +21,28 @@ static int heap[10000];
 
 int heapDelete()
 {
-  return 0;  //A dummy return statement
+	/*Local Variable list*/
+	int counter;
+	int counter2;	
+	int greatestInt;
+	
+	/*Check each integer in heap and find the greatest integer*/
+	for(counter = 0; counter < top; counter++)
+	{
+		for(counter2 = 0; counter2 < top; counter2++)
+		{
+			if(heap[counter] > heap[counter2])
+			{
+				greatestInt = heap[counter];
+			}
+			else
+			{
+				greatestInt = heap[counter2];
+			}
+		}
+	}
+	
+  return greatestInt;  
 }
 
 /**
@@ -26,7 +52,7 @@ int heapDelete()
 void addHeap(int thing2add)
 {
 	/*Add things2add to the heap*/
-	heap[top] = things2add;
+	heap[top] = thing2add;
 	top++;
 }
 
@@ -36,5 +62,17 @@ void addHeap(int thing2add)
  */
 int heapSize()
 {
-  return 0;  //A dummy return statement
+	/*Local Variable*/
+	int counter = 0;
+	int size = 0;
+	
+	for(counter = 0; counter < top; counter++)
+	{
+		/*Increment the size by 1 and check the next number in the heap*/
+		size++;
+	}
+	
+	
+		
+  return size;  //A dummy return statement
 }
