@@ -18,8 +18,11 @@ int main(int argc, char * argv[])
 		addHeap(10);
 		addHeap(13);
 		addHeap(1);
-		printf("Size %d", heapSize());
-		printf("Delete %d", heapDelete());
+		addHeap(14);
+		addHeap(2);
+		printf("Size %d ", heapSize());
+		printf("Delete %d ", heapDelete());
+		printf("Size %d ", heapSize());
 		close = true;
 	}
 	

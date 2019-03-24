@@ -36,9 +36,19 @@ int heapDelete()
 				greatestInt = heap[counter];
 			}
 			else
+			if(heap[counter] < heap[counter2])
 			{
 				greatestInt = heap[counter2];
 			}
+		}
+	}
+	
+	/*Delete that integer*/
+	for(counter = 0; counter < top; counter++)
+	{
+		if(heap[counter] == greatestInt)
+		{
+			heap[counter] = NULL;
 		}
 	}
 	
@@ -69,7 +79,10 @@ int heapSize()
 	for(counter = 0; counter < top; counter++)
 	{
 		/*Increment the size by 1 and check the next number in the heap*/
-		size++;
+		if(heap[counter] != NULL)
+		{
+			size++;
+		}	
 	}
 	
 	
