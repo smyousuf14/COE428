@@ -25,21 +25,32 @@ int heapDelete()
 	int counter;
 	int counter2;	
 	int greatestInt;
+	int test;
 	
 	/*Check each integer in heap and find the greatest integer*/
 	for(counter = 0; counter < top; counter++)
 	{
 		for(counter2 = 0; counter2 < top; counter2++)
 		{
-			if(heap[counter] > heap[counter2])
+			/*FIrst check if the algorithm has checked for a greater integer beforehand*/
+			if(greatestInt == NULL)
+			{
+				test = heap[counter2];
+			}
+			else
+			{
+				test = greatestInt;
+			}
+			
+			if(heap[counter] > test)
 			{
 				greatestInt = heap[counter];
 			}
 			else
-			if(heap[counter] < heap[counter2])
 			{
-				greatestInt = heap[counter2];
+				greatestInt = test;
 			}
+			
 		}
 	}
 	

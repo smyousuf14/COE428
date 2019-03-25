@@ -16,10 +16,10 @@ int main(int argc, char * argv[])
 	if(value == 1)
 	{
 		addHeap(10);
-		addHeap(13);
+		addHeap(17);
 		addHeap(1);
 		addHeap(14);
-		addHeap(2);
+		addHeap(-2);
 		printf("Size %d ", heapSize());
 		printf("Delete %d ", heapDelete());
 		printf("Size %d ", heapSize());
