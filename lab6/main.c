@@ -37,34 +37,64 @@ mySort(int array[], unsigned int num_elements)
 int main(int argc, char * argv[])
 {
   int value;
+  int checkNum = 0;
   bool close = false;
-  int num[4] = {9,2,10,1};
-  int counter;
-  while (scanf("%d\n", &value) != EOF | close == false) 
+  bool brother = true;
+  int heapNum[100] = {0};
+  int backbone; /*The last line*/
+  int totalNum = 0; /*Total Number of data*/
+  int counter = 0; /*To count the heap number.*/
+  
+  while (scanf("%d\n", &value) != EOF) 
   {
-    //fprintf(stderr, "READING INPUT: %d\n", value);
-	
-	mySort(num,4);
-	if(value == 1)
+    fprintf(stderr, "READING INPUT: %d\n", value);
+    heapNum[totalNum] = value;
+	totalNum++;
+  }
+  
+  /*Now sort the heap number from greatest to least*/
+  mySort(heapNum, totalNum);
+  
+  /*Now add each number in heapNum into a heap data structure*/
+  for(counter = 0; counter < totalNum; counter++)
+  {
+	addHeap(heapNum[counter]);
+  }
+  
+  /*Now print the XML expression*/
+ /* counter  = 0;
+  while(close == false)
+  {
+	printf("<node id = %d>", heapNum[counter]);
+	checkNum++;
+	if(heapNum[counter + counter + 1] == NULL && heapNum[counter + counter + 2] == NULL)
 	{
-		addHeap(10);
-		addHeap(17);
-		addHeap(1);
-		addHeap(14);
-		addHeap(-2);
-		printf("Size %d ", heapSize());
-		printf("Delete %d ", heapDelete());
-		printf("Size %d ", heapSize());
-		
-		for(counter = 0; counter < 4;counter++)
+		printf("</node>");
+		if(heapNum[counter + 1] != NULL && brother == true)
 		{
-			printf("\n%d", num[counter]);
+			counter++;
+			brother = false;
 		}
-		close = true;
+		else
+		{
+			counter = backbone + 1;
+		}
+	}
+	else
+	{
+		if(brother == true)
+		{
+			backbone = counter;
+		}
+		counter = counter + counter + 1;
+		
 	}
 	
-    
-    
+	if(checkNum == totalNum)
+	{
+		close = true;
+	}
   }
+  */
   exit(0);
 }
