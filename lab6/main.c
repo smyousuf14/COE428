@@ -61,8 +61,26 @@ int main(int argc, char * argv[])
 	addHeap(heapNum[counter]);
   }
   
+  /*Print the XML table*/
+  heapTable();
+  
+  /*Delete the greatest number from the heap one at time and push it to the stack*/
+  for(counter = 0; counter < totalNum; counter++)
+  {
+	decrementHeap();
+  }
+
+
+  /*Pop the stack*/
+  printf("\n");
+  for(counter = 0; counter < totalNum; counter++)
+  {
+	printf("\n");
+	printf("%d", pop());
+  }
+  
   /*Now print the XML expression*/
- /* counter  = 0;
+  /*counter  = 0;
   while(close == false)
   {
 	printf("<node id = %d>", heapNum[counter]);
